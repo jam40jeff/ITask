@@ -10,7 +10,7 @@ This is where the `ITask` interface comes in.  Both `ITask` and `ITask<TResult>`
 
 ## Download
 
-ITask is available as a NuGet package through nuget.org with the ID `MorseCode.ITask`.
+ITask is available as a NuGet package through nuget.org with the ID MorseCode.ITask.
 
 ## Usage
 
