@@ -8,6 +8,10 @@ The built-in `System.Threading.Tasks.Task` and `System.Threading.Tasks.Task<TRes
 
 This is where the `ITask` interface comes in.  Both `ITask` and `ITask<TResult>` interfaces are included for consistency, but the real power lies in teh `ITask<TResult>` interface.  It exposes the same functionality as `System.Threading.Tasks.Task<TResult>`, simply through an interface.  Because `TResult` is only used in the output position for this interface, it is covariant (its definition is `public interface ITask<out TResult>`) and may be used as a return value within another generic interface without breaking its covariance.
 
+## Download
+
+ITask is available as a NuGet package through nuget.org with the ID `MorseCode.ITask`.
+
 ## Usage
 
 ### Using an ITask within an interface
