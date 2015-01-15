@@ -1,5 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/CodeStyle/FileHeader/FileHeaderText/@EntryValue">The MIT License (MIT)&#xD;
+	<s:String x:Key="/Default/CodeStyle/FileHeader/FileHeaderText/@EntryValue">--------------------------------------------------------------------------------------------------------------------&#xD;
+&lt;copyright file="$FILENAME$" company="MorseCode Software"&gt;&#xD;
+Copyright (c) $CURRENT_YEAR$ MorseCode Software&#xD;
+&lt;/copyright&gt;&#xD;
+&lt;summary&gt;&#xD;
+The MIT License (MIT)&#xD;
 &#xD;
 Copyright (c) $CURRENT_YEAR$ MorseCode Software&#xD;
 &#xD;
@@ -19,4 +24,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE&#xD;
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER&#xD;
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,&#xD;
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE&#xD;
-SOFTWARE.</s:String></wpf:ResourceDictionary>
+SOFTWARE.&#xD;
+&lt;/summary&gt;&#xD;
+--------------------------------------------------------------------------------------------------------------------</s:String>
+	<s:Int64 x:Key="/Default/Environment/SearchAndNavigation/DefaultOccurencesGroupingIndex/@EntryValue">6</s:Int64></wpf:ResourceDictionary>
