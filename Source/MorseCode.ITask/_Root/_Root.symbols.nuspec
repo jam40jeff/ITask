@@ -11,9 +11,9 @@
     <description>Provides an awaitable covariant ITask interface which may be used in place of the built-in Task class.</description>
   </metadata>
   <files>
-    <file src="bin\Release\MorseCode.ITask.dll" target="lib\MorseCode.ITask.dll" />
-    <file src="bin\Release\MorseCode.ITask.pdb" target="lib\MorseCode.ITask.pdb" />
-    <file src="bin\Release\MorseCode.ITask.xml" target="lib\MorseCode.ITask.xml" />
+    <file src="bin\Release\MorseCode.ITask.dll" target="lib\net45\MorseCode.ITask.dll" />
+    <file src="bin\Release\MorseCode.ITask.pdb" target="lib\net45\MorseCode.ITask.pdb" />
+    <file src="bin\Release\MorseCode.ITask.xml" target="lib\net45\MorseCode.ITask.xml" />
     <file src="**\*.cs" target="src" />
   </files>
 </package>
