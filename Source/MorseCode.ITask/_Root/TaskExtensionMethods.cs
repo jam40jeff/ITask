@@ -51,6 +51,8 @@ namespace MorseCode.ITask
         /// </returns>
         public static ITask AsITask(this Task task)
         {
+            Contract.Ensures(Contract.Result<ITask>() != null);
+
             return new TaskWrapper(task);
         }
 
@@ -68,6 +70,8 @@ namespace MorseCode.ITask
         /// </returns>
         public static ITask<TResult> AsITask<TResult>(this Task<TResult> task)
         {
+            Contract.Ensures(Contract.Result<ITask<TResult>>() != null);
+
             return new TaskWrapper<TResult>(task);
         }
 
@@ -82,6 +86,8 @@ namespace MorseCode.ITask
         /// </returns>
         public static async Task AsTask(this ITask task)
         {
+            Contract.Ensures(Contract.Result<Task>() != null);
+
             await task.ConfigureAwait(false);
         }
 
@@ -99,6 +105,8 @@ namespace MorseCode.ITask
         /// </returns>
         public static async Task<TResult> AsTask<TResult>(this ITask<TResult> task)
         {
+            Contract.Ensures(Contract.Result<Task<TResult>>() != null);
+
             return await task;
         }
 
@@ -115,6 +123,7 @@ namespace MorseCode.ITask
         public static AwaiterInterfaceWrapper GetAwaiter(this ITask awaitable)
         {
             Contract.Requires(awaitable != null);
+            Contract.Ensures(Contract.Result<AwaiterInterfaceWrapper>() != null);
 
             return new AwaiterInterfaceWrapper(awaitable.CreateAwaiter());
         }
@@ -131,6 +140,7 @@ namespace MorseCode.ITask
         public static AwaiterInterfaceWrapper GetAwaiter(this IConfiguredTask awaitable)
         {
             Contract.Requires(awaitable != null);
+            Contract.Ensures(Contract.Result<AwaiterInterfaceWrapper>() != null);
 
             return new AwaiterInterfaceWrapper(awaitable.CreateAwaiter());
         }
@@ -150,6 +160,7 @@ namespace MorseCode.ITask
         public static AwaiterInterfaceWrapper<TResult> GetAwaiter<TResult>(this ITask<TResult> awaitable)
         {
             Contract.Requires(awaitable != null);
+            Contract.Ensures(Contract.Result<AwaiterInterfaceWrapper<TResult>>() != null);
 
             return new AwaiterInterfaceWrapper<TResult>(awaitable.CreateAwaiter());
         }
@@ -169,6 +180,7 @@ namespace MorseCode.ITask
         public static AwaiterInterfaceWrapper<TResult> GetAwaiter<TResult>(this IConfiguredTask<TResult> awaitable)
         {
             Contract.Requires(awaitable != null);
+            Contract.Ensures(Contract.Result<AwaiterInterfaceWrapper<TResult>>() != null);
 
             return new AwaiterInterfaceWrapper<TResult>(awaitable.CreateAwaiter());
         }
