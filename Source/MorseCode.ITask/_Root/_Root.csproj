@@ -169,7 +169,6 @@
     <None Include="..\MorseCode.snk">
       <Link>MorseCode.snk</Link>
     </None>
-    <None Include="_Root.symbols.nuspec" />
     <None Include="_Root.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,16 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<?xml version="1.0"?>
+<package >
   <metadata>
-    <id>MorseCode.ITask</id>
+    <id>$id$</id>
     <version>$version$</version>
-    <title>ITask</title>
-    <authors>MorseCode Software</authors>
-    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
-    <projectUrl>https://github.com/jam40jeff/ITask</projectUrl>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Provides an awaitable covariant ITask interface which may be used in place of the built-in Task class.</description>
+    <description>$description$</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>Tag1 Tag2</tags>
   </metadata>
-  <files>
-    <file src="bin\Release\MorseCode.ITask.dll" target="lib\net45\MorseCode.ITask.dll" />
-  </files>
 </package>
