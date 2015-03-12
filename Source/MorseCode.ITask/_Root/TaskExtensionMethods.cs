@@ -107,7 +107,7 @@ namespace MorseCode.ITask
         {
             Contract.Ensures(Contract.Result<Task<TResult>>() != null);
 
-            return await task;
+            return await task.ConfigureAwait(false);
         }
 
         /// <summary>
