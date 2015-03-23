@@ -37,7 +37,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MorseCode ITask")]
-[assembly: AssemblyDescription("Provides an awaitable covariant ITask interface which may be used in place of the built-in Task class.")]
+[assembly: AssemblyDescription("An awaitable covariant ITask interface which may be used in place of the built-in Task class.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MorseCode Software")]
 [assembly: AssemblyProduct("MorseCode ITask")]
@@ -63,5 +63,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
