@@ -97,6 +97,6 @@ ITask<int> iTask2 = t2.AsITask();
 Conversely, the `AsTask` extension method will convert an `ITask` or an `ITask<TResult>` into a `System.Threading.Tasks.Task` or a `System.Threading.Tasks.Task<TResult>` as follows (given a variable `t` of type `ITask` and a variable `t2` of type `ITask<int>`):
 
 ```c#
-System.Threading.Tasks.Task iTask = t.AsTask();
-System.Threading.Tasks.Task<int> iTask2 = t2.AsTask();
+System.Threading.Tasks.Task task = t.AsTask();
+System.Threading.Tasks.Task<int> task2 = t2.AsTask();
 ```
