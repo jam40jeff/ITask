@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
@@ -10,5 +10,11 @@
     <projectUrl>https://github.com/jam40jeff/ITask</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
+    <references>
+      <reference file="MorseCode.ITask.dll" />
+    </references>
   </metadata>
+  <files>
+    <file src="$TargetDir$CodeContracts\MorseCode.ITask.Contracts.dll" target="lib\net45" />
+  </files>
 </package>
