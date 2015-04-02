@@ -55,9 +55,16 @@ namespace MorseCode.ITask
         /// </remarks>
         public static ITask CreateTask(Func<Task> func)
         {
-            Contract.Requires(func != null);
+            Contract.Requires<ArgumentNullException>(func != null, "func");
+            Contract.Ensures(Contract.Result<ITask>() != null);
 
-            return func().AsITask();
+            Task task = func();
+            if (task == null)
+            {
+                throw new InvalidOperationException("The function must return a non-null task.");
+            }
+
+            return task.AsITask();
         }
 
         /// <summary>
@@ -77,9 +84,16 @@ namespace MorseCode.ITask
         /// </remarks>
         public static ITask<TResult> CreateTask<TResult>(Func<Task<TResult>> func)
         {
-            Contract.Requires(func != null);
+            Contract.Requires<ArgumentNullException>(func != null, "func");
+            Contract.Ensures(Contract.Result<ITask<TResult>>() != null);
 
-            return func().AsITask();
+            Task<TResult> task = func();
+            if (task == null)
+            {
+                throw new InvalidOperationException("The function must return a non-null task.");
+            }
+
+            return task.AsITask();
         }
     }
 }

@@ -52,7 +52,7 @@ namespace MorseCode.ITask
         /// </param>
         public AwaiterInterfaceWrapper(IAwaiter awaiter)
         {
-            Contract.Requires(awaiter != null);
+            Contract.Requires<ArgumentNullException>(awaiter != null, "awaiter");
             Contract.Ensures(this.awaiter != null);
 
             this.awaiter = awaiter;
