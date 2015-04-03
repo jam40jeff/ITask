@@ -30,7 +30,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 #endregion
 
-namespace Tests
+namespace MorseCode.ITask.Tests
 {
     using System.Threading;
     using System.Threading.Tasks;
