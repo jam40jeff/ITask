@@ -43,7 +43,7 @@ namespace MorseCode.ITask.Tests
         [Test]
         public async Task TaskWrapper()
         {
-            await Task.Factory.StartNew(() => Thread.Sleep(50)).ConfigureAwait(false);
+            await Task.Factory.StartNew(() => Thread.Sleep(50)).AsITask().ConfigureAwait(false);
         }
     }
 }
