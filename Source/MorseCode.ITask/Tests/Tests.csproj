@@ -7,8 +7,8 @@
     <ProjectGuid>{88191769-417A-4306-B025-C01C2D431A11}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tests</RootNamespace>
-    <AssemblyName>Tests</AssemblyName>
+    <RootNamespace>MorseCode.ITask.Tests</RootNamespace>
+    <AssemblyName>MorseCode.ITask.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
