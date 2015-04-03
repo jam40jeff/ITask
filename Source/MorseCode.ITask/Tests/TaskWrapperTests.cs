@@ -40,10 +40,177 @@ namespace MorseCode.ITask.Tests
     [TestFixture]
     public class TaskWrapperTests
     {
+        #region Public Methods and Operators
+
+        [Test]
+        public async Task AsITaskExtensionMethod()
+        {
+            await Task.Run(() => Thread.Sleep(50)).AsITask().ConfigureAwait(false);
+        }
+
+        [Test]
+        public async Task AsITaskWithResultExtensionMethod()
+        {
+            const int Value = 5;
+            int result = await Task.Run(() =>
+                {
+                    Thread.Sleep(50);
+                    return Value;
+                }).AsITask().ConfigureAwait(false);
+
+            Assert.AreEqual(Value, result);
+        }
+
+        [Test]
+        public async Task AsTaskExtensionMethod()
+        {
+            await TaskInterfaceFactory.CreateTask(async () => await Task.Delay(50).ConfigureAwait(false)).AsTask().ConfigureAwait(false);
+        }
+
+        [Test]
+        public async Task AsTaskWithResultExtensionMethod()
+        {
+            const int Value = 5;
+            int result = await TaskInterfaceFactory.CreateTask(async () =>
+                {
+                    await Task.Delay(50).ConfigureAwait(false);
+                    return Value;
+                }).AsTask().ConfigureAwait(false);
+
+            Assert.AreEqual(Value, result);
+        }
+
+        [Test]
+        public async Task TaskInterfaceFactoryCreateMethod()
+        {
+            await TaskInterfaceFactory.CreateTask(async () => await Task.Delay(50).ConfigureAwait(false)).ConfigureAwait(false);
+        }
+
+        [Test]
+        public async Task TaskInterfaceFactoryCreateWithResultMethod()
+        {
+            const int Value = 5;
+            int result = await TaskInterfaceFactory.CreateTask(async () =>
+            {
+                await Task.Delay(50).ConfigureAwait(false);
+                return Value;
+            }).ConfigureAwait(false);
+
+            Assert.AreEqual(Value, result);
+        }
+
+        [Test]
+        public void ConfiguredTaskWrapperCreateAwaiter()
+        {
+            IAwaiter awaiter = Task.Run(() => Thread.Sleep(50)).AsITask().ConfigureAwait(false).CreateAwaiter();
+
+            Assert.IsNotNull(awaiter);
+        }
+
+        [Test]
+        public void ConfiguredTaskWrapperWithResultCreateAwaiter()
+        {
+            const int Value = 5;
+            IAwaiter<int> awaiter = Task.Run(() =>
+                {
+                    Thread.Sleep(50);
+                    return Value;
+                }).AsITask().ConfigureAwait(false).CreateAwaiter();
+
+            Assert.IsNotNull(awaiter);
+        }
+
         [Test]
         public async Task TaskWrapper()
         {
-            await Task.Factory.StartNew(() => Thread.Sleep(50)).AsITask().ConfigureAwait(false);
+            await Task.Run(() => Thread.Sleep(50)).AsITask();
         }
+
+        [Test]
+        public async Task TaskWrapperConfigureAwaitFalse()
+        {
+            await Task.Run(() => Thread.Sleep(50)).AsITask().ConfigureAwait(false);
+        }
+
+        [Test]
+        public async Task TaskWrapperConfigureAwaitTrue()
+        {
+            await Task.Run(() => Thread.Sleep(50)).AsITask().ConfigureAwait(true);
+        }
+
+        [Test]
+        public void TaskWrapperCreateAwaiter()
+        {
+            IAwaiter awaiter = Task.Run(() => Thread.Sleep(50)).AsITask().CreateAwaiter();
+
+            Assert.IsNotNull(awaiter);
+        }
+
+        [Test]
+        public void TaskWrapperResult()
+        {
+            const int Value = 5;
+            int result = Task.Run(() =>
+                {
+                    Thread.Sleep(50);
+                    return Value;
+                }).AsITask().Result;
+
+            Assert.AreEqual(Value, result);
+        }
+
+        [Test]
+        public async Task TaskWrapperWithResult()
+        {
+            const int Value = 5;
+            int result = await Task.Run(() =>
+                {
+                    Thread.Sleep(50);
+                    return Value;
+                }).AsITask();
+
+            Assert.AreEqual(Value, result);
+        }
+
+        [Test]
+        public async Task TaskWrapperWithResultConfigureAwaitFalse()
+        {
+            const int Value = 5;
+            int result = await Task.Run(() =>
+                {
+                    Thread.Sleep(50);
+                    return Value;
+                }).AsITask().ConfigureAwait(false);
+
+            Assert.AreEqual(Value, result);
+        }
+
+        [Test]
+        public async Task TaskWrapperWithResultConfigureAwaitTrue()
+        {
+            const int Value = 5;
+            int result = await Task.Run(() =>
+                {
+                    Thread.Sleep(50);
+                    return Value;
+                }).AsITask().ConfigureAwait(true);
+
+            Assert.AreEqual(Value, result);
+        }
+
+        [Test]
+        public void TaskWrapperWithResultCreateAwaiter()
+        {
+            const int Value = 5;
+            IAwaiter<int> awaiter = Task.Run(() =>
+                {
+                    Thread.Sleep(50);
+                    return Value;
+                }).AsITask().CreateAwaiter();
+
+            Assert.IsNotNull(awaiter);
+        }
+
+        #endregion
     }
 }
