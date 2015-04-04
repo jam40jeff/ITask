@@ -1,5 +1,8 @@
 # ITask
 
+[![Build status](https://ci.appveyor.com/api/projects/status/7ua0d2xjjpe7fpe3?svg=true)](https://ci.appveyor.com/project/jam40jeff/itask)
+[![Coverage Status](https://coveralls.io/repos/jam40jeff/ITask/badge.svg?branch=master)](https://coveralls.io/r/jam40jeff/ITask?branch=master)
+
 Provides an awaitable covariant ITask interface which may be used in place of the built-in Task class.
 
 ## Purpose
