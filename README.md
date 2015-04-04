@@ -1,7 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/7ua0d2xjjpe7fpe3/branch/master?svg=true)](https://ci.appveyor.com/project/jam40jeff/itask/branch/master)
 [![Coverage Status](https://coveralls.io/repos/jam40jeff/ITask/badge.svg?branch=master)](https://coveralls.io/r/jam40jeff/ITask?branch=master)
-[![Total Downloads](https://img.shields.io/nuget/dt/MorseCode.ITask.svg)](https://img.shields.io/nuget/dt/MorseCode.ITask.svg)
-[![Latest Stable Version](https://img.shields.io/nuget/v/MorseCode.ITask.svg)](https://img.shields.io/nuget/v/MorseCode.ITask.svg)
+[![Total Downloads](https://img.shields.io/nuget/dt/MorseCode.ITask.svg)](http://www.nuget.org/packages/MorseCode.ITask/)
+[![Latest Stable Version](https://img.shields.io/nuget/v/MorseCode.ITask.svg)](http://www.nuget.org/packages/MorseCode.ITask/)
 
 # ITask
 
@@ -15,7 +15,7 @@ This is where the `ITask` interface comes in.  Both `ITask` and `ITask<TResult>`
 
 ## Download
 
-ITask is available as a NuGet package through nuget.org with the ID `MorseCode.ITask`.
+ITask is available as a [NuGet package](http://www.nuget.org/packages/MorseCode.ITask/) through nuget.org with the package ID [`MorseCode.ITask`](http://www.nuget.org/packages/MorseCode.ITask/).
 
 ## Usage
 
