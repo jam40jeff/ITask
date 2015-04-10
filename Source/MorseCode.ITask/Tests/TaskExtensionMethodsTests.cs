@@ -1,7 +1,7 @@
 ﻿#region License
 
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="TaskWrapperTests.cs" company="MorseCode Software">
+// <copyright file="TaskExtensionMethodsTests.cs" company="MorseCode Software">
 // Copyright (c) 2015 MorseCode Software
 // </copyright>
 // <summary>
@@ -38,85 +38,18 @@ namespace MorseCode.ITask.Tests
     using NUnit.Framework;
 
     [TestFixture]
-    public class TaskWrapperTests
+    public class TaskExtensionMethodsTests
     {
         #region Public Methods and Operators
 
         [Test]
-        public void ConfiguredTaskWrapperCreateAwaiter()
-        {
-            IAwaiter awaiter = Task.Run(() => Thread.Sleep(50)).AsITask().ConfigureAwait(false).CreateAwaiter();
-
-            Assert.IsNotNull(awaiter);
-        }
-
-        [Test]
-        public void ConfiguredTaskWrapperWithResultCreateAwaiter()
-        {
-            const int Value = 5;
-            IAwaiter<int> awaiter = Task.Run(() =>
-                {
-                    Thread.Sleep(50);
-                    return Value;
-                }).AsITask().ConfigureAwait(false).CreateAwaiter();
-
-            Assert.IsNotNull(awaiter);
-        }
-
-        [Test]
-        public async Task TaskWrapper()
-        {
-            await Task.Run(() => Thread.Sleep(50)).AsITask();
-        }
-
-        [Test]
-        public async Task TaskWrapperConfigureAwaitFalse()
+        public async Task AsITaskExtensionMethod()
         {
             await Task.Run(() => Thread.Sleep(50)).AsITask().ConfigureAwait(false);
         }
 
         [Test]
-        public async Task TaskWrapperConfigureAwaitTrue()
-        {
-            await Task.Run(() => Thread.Sleep(50)).AsITask().ConfigureAwait(true);
-        }
-
-        [Test]
-        public void TaskWrapperCreateAwaiter()
-        {
-            IAwaiter awaiter = Task.Run(() => Thread.Sleep(50)).AsITask().CreateAwaiter();
-
-            Assert.IsNotNull(awaiter);
-        }
-
-        [Test]
-        public void TaskWrapperResult()
-        {
-            const int Value = 5;
-            int result = Task.Run(() =>
-                {
-                    Thread.Sleep(50);
-                    return Value;
-                }).AsITask().Result;
-
-            Assert.AreEqual(Value, result);
-        }
-
-        [Test]
-        public async Task TaskWrapperWithResult()
-        {
-            const int Value = 5;
-            int result = await Task.Run(() =>
-                {
-                    Thread.Sleep(50);
-                    return Value;
-                }).AsITask();
-
-            Assert.AreEqual(Value, result);
-        }
-
-        [Test]
-        public async Task TaskWrapperWithResultConfigureAwaitFalse()
+        public async Task AsITaskWithResultExtensionMethod()
         {
             const int Value = 5;
             int result = await Task.Run(() =>
@@ -129,29 +62,44 @@ namespace MorseCode.ITask.Tests
         }
 
         [Test]
-        public async Task TaskWrapperWithResultConfigureAwaitTrue()
+        public async Task AsTaskExtensionMethod()
+        {
+            await TaskInterfaceFactory.CreateTask(async () => await Task.Delay(50).ConfigureAwait(false)).AsTask().ConfigureAwait(false);
+        }
+
+        [Test]
+        public async Task AsTaskWithResultExtensionMethod()
         {
             const int Value = 5;
-            int result = await Task.Run(() =>
+            int result = await TaskInterfaceFactory.CreateTask(async () =>
                 {
-                    Thread.Sleep(50);
+                    await Task.Delay(50).ConfigureAwait(false);
                     return Value;
-                }).AsITask().ConfigureAwait(true);
+                }).AsTask().ConfigureAwait(false);
 
             Assert.AreEqual(Value, result);
         }
 
         [Test]
-        public void TaskWrapperWithResultCreateAwaiter()
+        public async Task AsUntypedITaskExtensionMethod()
         {
             const int Value = 5;
-            IAwaiter<int> awaiter = Task.Run(() =>
+            await Task.Run(() =>
                 {
                     Thread.Sleep(50);
                     return Value;
-                }).AsITask().CreateAwaiter();
+                }).AsUntypedITask().ConfigureAwait(false);
+        }
 
-            Assert.IsNotNull(awaiter);
+        [Test]
+        public async Task AsUntypedITaskOnITaskExtensionMethod()
+        {
+            const int Value = 5;
+            await Task.Run(() =>
+                {
+                    Thread.Sleep(50);
+                    return Value;
+                }).AsITask().AsUntypedITask().ConfigureAwait(false);
         }
 
         #endregion
