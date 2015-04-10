@@ -1,16 +1,21 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/7ua0d2xjjpe7fpe3/branch/master?svg=true)](https://ci.appveyor.com/project/jam40jeff/itask/branch/master)
+[![Coverage Status](https://coveralls.io/repos/jam40jeff/ITask/badge.svg?branch=master)](https://coveralls.io/r/jam40jeff/ITask?branch=master)
+[![Total Downloads](https://img.shields.io/nuget/dt/MorseCode.ITask.svg)](http://www.nuget.org/packages/MorseCode.ITask/)
+[![Latest Stable Version](https://img.shields.io/nuget/v/MorseCode.ITask.svg)](http://www.nuget.org/packages/MorseCode.ITask/)
+
 # ITask
 
 Provides an awaitable covariant ITask interface which may be used in place of the built-in Task class.
 
 ## Purpose
 
-The built-in `System.Threading.Tasks.Task` and `System.Threading.Tasks.Task<TResult>` classes allow for compiler support of the `async` and `await` keywords.  However, since these types must be used as the return values of the methods which leverage the support of the keywords, any interface containing one of these methods may not be covariant over the type `TResult`.  This can cause a big problems, especially when converting methods on existing interfaces from being synchronous to asynchronous.
+The built-in `System.Threading.Tasks.Task` and `System.Threading.Tasks.Task<TResult>` classes allow for compiler support of the `async` and `await` keywords.  However, since these types must be used as the return values of the methods which leverage the support of the keywords, any interface containing one of these methods may not be covariant over the type `TResult`.  This can cause problems, especially when converting methods on existing interfaces from being synchronous to asynchronous.
 
 This is where the `ITask` interface comes in.  Both `ITask` and `ITask<TResult>` interfaces are included for consistency, but the real power lies in the `ITask<TResult>` interface.  It exposes the same functionality as `System.Threading.Tasks.Task<TResult>`, simply through an interface.  Because `TResult` is only used in the output position for this interface, it is covariant (its definition is `public interface ITask<out TResult>`) and may be used as a return value within another generic interface without breaking its covariance.
 
 ## Download
 
-ITask is available as a NuGet package through nuget.org with the ID `MorseCode.ITask`.
+ITask is available as a [NuGet package](http://www.nuget.org/packages/MorseCode.ITask/) through nuget.org with the package ID [`MorseCode.ITask`](http://www.nuget.org/packages/MorseCode.ITask/).
 
 ## Usage
 
