@@ -41,7 +41,7 @@ namespace MorseCode.ITask
     /// The type of the result of the task.
     /// </typeparam>
     [ContractClass(typeof(TaskInterfaceContract<>))]
-    public interface ITask<out TResult>
+    public interface ITask<out TResult> : ITask
     {
         /// <summary>
         /// Gets the result value of this <see cref="ITask{TResult}"/>.
@@ -56,13 +56,13 @@ namespace MorseCode.ITask
         /// <summary>Creates an awaiter used to await this <see cref="ITask{TResult}"/>.</summary>
         /// <returns>An awaiter instance.</returns>
         /// <remarks>This method is intended for compiler user rather than use directly in code.</remarks>
-        IAwaiter<TResult> CreateAwaiter();
+        new IAwaiter<TResult> CreateAwaiter();
 
         /// <summary>Configures an awaiter used to await this <see cref="ITask"/>.</summary>
         /// <param name="continueOnCapturedContext">
         /// true to attempt to marshal the continuation back to the original context captured; otherwise, false.
         /// </param>
         /// <returns>An object used to await this task.</returns>
-        IConfiguredTask<TResult> ConfigureAwait(bool continueOnCapturedContext);
+        new IConfiguredTask<TResult> ConfigureAwait(bool continueOnCapturedContext);
     }
 }

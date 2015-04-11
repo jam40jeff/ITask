@@ -154,6 +154,15 @@ namespace MorseCode.ITask.Tests
             Assert.IsNotNull(awaiter);
         }
 
+        [Test]
+        public void TaskInterfaceInheritance()
+        {
+            ITask<int> task = Task.FromResult(5).AsITask();
+
+            Assert.IsInstanceOf<ITask<int>>(task);
+            Assert.IsInstanceOf<ITask>(task);
+        }
+
         #endregion
     }
 }

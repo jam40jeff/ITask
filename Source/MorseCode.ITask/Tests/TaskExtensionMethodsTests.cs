@@ -80,28 +80,6 @@ namespace MorseCode.ITask.Tests
             Assert.AreEqual(Value, result);
         }
 
-        [Test]
-        public async Task AsUntypedITaskExtensionMethod()
-        {
-            const int Value = 5;
-            await Task.Run(() =>
-                {
-                    Thread.Sleep(50);
-                    return Value;
-                }).AsUntypedITask().ConfigureAwait(false);
-        }
-
-        [Test]
-        public async Task AsUntypedITaskOnITaskExtensionMethod()
-        {
-            const int Value = 5;
-            await Task.Run(() =>
-                {
-                    Thread.Sleep(50);
-                    return Value;
-                }).AsITask().AsUntypedITask().ConfigureAwait(false);
-        }
-
         #endregion
     }
 }
