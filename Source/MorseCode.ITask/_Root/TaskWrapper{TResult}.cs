@@ -56,9 +56,19 @@ namespace MorseCode.ITask
             }
         }
 
+        IAwaiter ITask.CreateAwaiter()
+        {
+            return new TaskAwaiterWrapper(((Task)this.task).GetAwaiter());
+        }
+
         IAwaiter<TResult> ITask<TResult>.CreateAwaiter()
         {
             return new TaskAwaiterWrapper<TResult>(this.task.GetAwaiter());
+        }
+
+        IConfiguredTask ITask.ConfigureAwait(bool continueOnCapturedContext)
+        {
+            return new ConfiguredTaskWrapper(this.task, continueOnCapturedContext);
         }
 
         IConfiguredTask<TResult> ITask<TResult>.ConfigureAwait(bool continueOnCapturedContext)

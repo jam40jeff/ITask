@@ -37,16 +37,32 @@ namespace MorseCode.ITask
     [ContractClassFor(typeof(ITask<>))]
     internal abstract class TaskInterfaceContract<TResult> : ITask<TResult>
     {
-        public TResult Result { get; set; }
+        TResult ITask<TResult>.Result
+        {
+            get
+            {
+                return default(TResult);
+            }
+        }
 
-        public IAwaiter<TResult> CreateAwaiter()
+        IAwaiter ITask.CreateAwaiter()
+        {
+            return null;
+        }
+
+        IAwaiter<TResult> ITask<TResult>.CreateAwaiter()
         {
             Contract.Ensures(Contract.Result<IAwaiter<TResult>>() != null);
 
             return null;
         }
 
-        public IConfiguredTask<TResult> ConfigureAwait(bool continueOnCapturedContext)
+        IConfiguredTask ITask.ConfigureAwait(bool continueOnCapturedContext)
+        {
+            return null;
+        }
+
+        IConfiguredTask<TResult> ITask<TResult>.ConfigureAwait(bool continueOnCapturedContext)
         {
             Contract.Ensures(Contract.Result<IConfiguredTask<TResult>>() != null);
 

@@ -79,46 +79,6 @@ namespace MorseCode.ITask
         }
 
         /// <summary>
-        /// Converts the <see cref="Task{TResult}"/> instance into an <see cref="ITask"/>.
-        /// </summary>
-        /// <param name="task">
-        /// The task to convert.
-        /// </param>
-        /// <typeparam name="TResult">
-        /// The type of the result of the task.
-        /// </typeparam>
-        /// <returns>
-        /// The <see cref="ITask"/>.
-        /// </returns>
-        public static ITask AsUntypedITask<TResult>(this Task<TResult> task)
-        {
-            Contract.Requires<ArgumentNullException>(task != null, "task");
-            Contract.Ensures(Contract.Result<ITask>() != null);
-
-            return new TaskWrapper(task);
-        }
-
-        /// <summary>
-        /// Converts the <see cref="ITask{TResult}"/> instance into an <see cref="ITask"/>.
-        /// </summary>
-        /// <param name="task">
-        /// The task to convert.
-        /// </param>
-        /// <typeparam name="TResult">
-        /// The type of the result of the task.
-        /// </typeparam>
-        /// <returns>
-        /// The <see cref="ITask"/>.
-        /// </returns>
-        public static ITask AsUntypedITask<TResult>(this ITask<TResult> task)
-        {
-            Contract.Requires<ArgumentNullException>(task != null, "task");
-            Contract.Ensures(Contract.Result<ITask>() != null);
-
-            return new TaskWrapper(task.AsTask());
-        }
-
-        /// <summary>
         /// Converts the <see cref="ITask"/> instance into a <see cref="Task"/>.
         /// </summary>
         /// <param name="task">
