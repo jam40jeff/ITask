@@ -26,7 +26,7 @@ Given the following interface:
 ```c#
 interface ITest<out T>
 {
-    T CopmputeValue();
+    T ComputeValue();
 }
 ```
 
@@ -35,7 +35,7 @@ converting the `ComputeValue` method from being synchronous to ansynchronous wou
 ```c#
 interface ITest<T>
 {
-    System.Threading.Tasks.Task<T> CopmputeValue();
+    System.Threading.Tasks.Task<T> ComputeValue();
 }
 ```
 
@@ -44,7 +44,7 @@ With the `ITask` interface, it is possible to make the `ComputeValue` method com
 ```c#
 interface ITest<out T>
 {
-    ITask<T> CopmputeValue();
+    ITask<T> ComputeValue();
 }
 ```
 
