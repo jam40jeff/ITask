@@ -1,13 +1,11 @@
-﻿#region License
-
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Copy of AwaiterInterfaceContract.cs" company="MorseCode Software">
-// Copyright (c) 2014 MorseCode Software
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ConfiguredTaskInterfaceContract.cs" company="MorseCode Software">
+// Copyright (c) 2015 MorseCode Software
 // </copyright>
 // <summary>
 // The MIT License (MIT)
 // 
-// Copyright (c) 2014 MorseCode Software
+// Copyright (c) 2015 MorseCode Software
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +26,6 @@
 // SOFTWARE.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-#endregion
 
 namespace MorseCode.ITask
 {
@@ -40,6 +37,8 @@ namespace MorseCode.ITask
         public IAwaiter CreateAwaiter()
         {
             Contract.Ensures(Contract.Result<IAwaiter>() != null);
+
+            string result = System.IO.Path.Combine("test", "test");
 
             return null;
         }
