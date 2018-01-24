@@ -142,6 +142,7 @@
     <Compile Include="AwaiterInterfaceContract{TResult}.cs" />
     <Compile Include="ConfiguredTaskInterfaceContract.cs" />
     <Compile Include="ConfiguredTaskInterfaceContract{TResult}.cs" />
+    <Compile Include="Contract.cs" />
     <Compile Include="TaskInterfaceContract{TResult}.cs" />
     <Compile Include="TaskInterfaceContract.cs" />
     <Compile Include="TaskInterfaceFactory.cs" />
