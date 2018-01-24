@@ -68,7 +68,24 @@ If you are using Resharper, it should suggest adding this `using` statement auto
 
 ### Returning an ITask
 
-Unfortunately, the C# compiler only supports marking methods with the `async` keyword if they return a `System.Threading.Tasks.Task` or a `System.Threading.Tasks.Task<TResult>`.  However, the only reason to use the `async` keyword is to enable support for the `await` keyword within that method.  As long as the method itself returns an awaitable (which `ITask` and `ITask<TResult>` are), then it doesn't matter if that method is marked with the `async` keyword to callers of the method.
+Starting with C#-7, the compiler supports [generalized async return types](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7#generalized-async-return-types). All you need to do to return an `ITask` is ensure you’re using a modern compiler (≥VS-15 a.k.a. Visual Studio 2017 or a recent roslyn), a new enough `MorseCode.ITask` package (support was added in version 1.1.x), and simply mark your method as returning `ITask`:
+
+```c#
+public async ITask<int> ComputeValueAsync()
+{
+    // Do some computing here!
+    // The await keyword may be used freely.
+
+    //For example:
+    int result1 = await DoSomethingOtherComputingAsync();
+    int result2 = await DoSomethingOtherComputingForSomethingElseAsync();
+    return result1 + result2;
+}
+```
+
+#### Legacy Compilers
+
+Unfortunately, prior to version 7, C# only supports marking methods with the `async` keyword if they return a `System.Threading.Tasks.Task` or a `System.Threading.Tasks.Task<TResult>`.  However, the only reason to use the `async` keyword is to enable support for the `await` keyword within that method.  As long as the method itself returns an awaitable (which `ITask` and `ITask<TResult>` are), then it doesn't matter if that method is marked with the `async` keyword to callers of the method.
 
 However, we do wish to maintain support for the `async` keyword for the code within a method returning either an `ITask` or an `ITask<TResult>`.
 
