@@ -32,7 +32,9 @@
 
 namespace MorseCode.ITask
 {
+    using MorseCode.ITask.CompilerServices;
     using System.Diagnostics.Contracts;
+    using System.Runtime.CompilerServices;
 
     /// <summary>
     /// An interface representing a Task which returns a value of type <typeparamref name="TResult"/>.
@@ -40,6 +42,7 @@ namespace MorseCode.ITask
     /// <typeparam name="TResult">
     /// The type of the result of the task.
     /// </typeparam>
+    [AsyncMethodBuilder(typeof(TaskInterfaceAsyncMethodBuilder<>))]
     [ContractClass(typeof(TaskInterfaceContract<>))]
     public interface ITask<out TResult> : ITask
     {

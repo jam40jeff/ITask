@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TaskExtensionMethodsTests.cs" />
+    <Compile Include="TaskInterfaceAsyncMethodBuilderTests.cs" />
     <Compile Include="TaskInterfaceFactoryTests.cs" />
     <Compile Include="TaskWrapperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

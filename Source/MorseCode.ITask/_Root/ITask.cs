@@ -32,11 +32,14 @@
 
 namespace MorseCode.ITask
 {
+    using MorseCode.ITask.CompilerServices;
     using System.Diagnostics.Contracts;
+    using System.Runtime.CompilerServices;
 
     /// <summary>
     /// An interface representing a Task which does not return a value.
     /// </summary>
+    [AsyncMethodBuilder(typeof(TaskInterfaceAsyncMethodBuilder))]
     [ContractClass(typeof(TaskInterfaceContract))]
     public interface ITask
     {
