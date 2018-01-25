@@ -1,7 +1,7 @@
 ﻿#region License
 
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ITask.cs" company="MorseCode Software">
+// <copyright file="TaskWrapper.cs" company="MorseCode Software">
 // Copyright (c) 2014 MorseCode Software
 // </copyright>
 // <summary>
@@ -30,27 +30,36 @@
 // --------------------------------------------------------------------------------------------------------------------
 #endregion
 
+using System.Diagnostics;
+
 namespace MorseCode.ITask
 {
-    using MorseCode.ITask.CompilerServices;
-    using System.Runtime.CompilerServices;
-
     /// <summary>
-    /// An interface representing a Task which does not return a value.
+    ///   I can’t figure out how to use contracts with a modern compiler (≥VS-15). I’ve
+    ///   heard it’s dead. https://github.com/Microsoft/CodeContracts/issues/492
     /// </summary>
-    [AsyncMethodBuilder(typeof(TaskInterfaceAsyncMethodBuilder))]
-    public interface ITask
+    class Contract
     {
-        /// <summary>Creates an awaiter used to await this <see cref="ITask"/>.</summary>
-        /// <returns>An awaiter instance.</returns>
-        /// <remarks>This method is intended for compiler user rather than use directly in code.</remarks>
-        IAwaiter CreateAwaiter();
+        [Conditional("DEBUG")]
+        public static void Ensures(bool test)
+        {
+        }
 
-        /// <summary>Configures an awaiter used to await this <see cref="ITask"/>.</summary>
-        /// <param name="continueOnCapturedContext">
-        /// true to attempt to marshal the continuation back to the original context captured; otherwise, false.
-        /// </param>
-        /// <returns>An object used to await this task.</returns>
-        IConfiguredTask ConfigureAwait(bool continueOnCapturedContext);
+        [Conditional("DEBUG")]
+        public static void Invariant(bool test)
+        {
+        }
+
+        [Conditional("DEBUG")]
+        public static void Requires(bool test, params object[] args)
+        {
+        }
+
+        [Conditional("DEBUG")]
+        public static void Requires<TException>(bool test, params object[] args)
+        {
+        }
+
+        public static TResult Result<TResult>() => default(TResult);
     }
 }
