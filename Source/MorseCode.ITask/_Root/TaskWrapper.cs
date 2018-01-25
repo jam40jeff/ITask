@@ -33,7 +33,6 @@
 namespace MorseCode.ITask
 {
     using System;
-    using System.Diagnostics.Contracts;
     using System.Threading.Tasks;
 
     internal class TaskWrapper : ITask
@@ -42,9 +41,6 @@ namespace MorseCode.ITask
 
         public TaskWrapper(Task task)
         {
-            Contract.Requires<ArgumentNullException>(task != null, "task");
-            Contract.Ensures(this.task != null);
-
             this.task = task;
         }
 
@@ -56,12 +52,6 @@ namespace MorseCode.ITask
         IConfiguredTask ITask.ConfigureAwait(bool continueOnCapturedContext)
         {
             return new ConfiguredTaskWrapper(this.task, continueOnCapturedContext);
-        }
-
-        [ContractInvariantMethod]
-        private void CodeContractsInvariants()
-        {
-            Contract.Invariant(this.task != null);
         }
     }
 }

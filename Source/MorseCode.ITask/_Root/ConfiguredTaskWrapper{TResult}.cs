@@ -32,7 +32,6 @@
 
 namespace MorseCode.ITask
 {
-    using System.Diagnostics.Contracts;
     using System.Runtime.CompilerServices;
     using System.Threading.Tasks;
 
@@ -42,8 +41,6 @@ namespace MorseCode.ITask
 
         public ConfiguredTaskWrapper(Task<TResult> task, bool continueOnCapturedContext)
         {
-            Contract.Requires(task != null);
-
             this.task = task.ConfigureAwait(continueOnCapturedContext);
         }
 

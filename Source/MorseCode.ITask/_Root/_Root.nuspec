@@ -14,7 +14,4 @@
       <reference file="MorseCode.ITask.dll" />
     </references>
   </metadata>
-  <files>
-    <file src="$TargetDir$CodeContracts\MorseCode.ITask.Contracts.dll" target="lib\net45" />
-  </files>
 </package>

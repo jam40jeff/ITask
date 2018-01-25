@@ -33,7 +33,6 @@
 namespace MorseCode.ITask
 {
     using System;
-    using System.Diagnostics.Contracts;
     using System.Runtime.CompilerServices;
 
     /// <summary>
@@ -55,9 +54,6 @@ namespace MorseCode.ITask
         /// </param>
         public AwaiterInterfaceWrapper(IAwaiter<TResult> awaiter)
         {
-            Contract.Requires<ArgumentNullException>(awaiter != null, "awaiter");
-            Contract.Ensures(this.awaiter != null);
-
             this.awaiter = awaiter;
         }
 
@@ -100,12 +96,6 @@ namespace MorseCode.ITask
         public TResult GetResult()
         {
             return this.awaiter.GetResult();
-        }
-
-        [ContractInvariantMethod]
-        private void CodeContractsInvariants()
-        {
-            Contract.Invariant(this.awaiter != null);
         }
     }
 }

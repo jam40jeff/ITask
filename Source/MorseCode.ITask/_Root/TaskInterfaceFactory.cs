@@ -33,7 +33,6 @@
 namespace MorseCode.ITask
 {
     using System;
-    using System.Diagnostics.Contracts;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -55,9 +54,6 @@ namespace MorseCode.ITask
         /// </remarks>
         public static ITask CreateTask(Func<Task> func)
         {
-            Contract.Requires<ArgumentNullException>(func != null, "func");
-            Contract.Ensures(Contract.Result<ITask>() != null);
-
             Task task = func();
             if (task == null)
             {
@@ -84,9 +80,6 @@ namespace MorseCode.ITask
         /// </remarks>
         public static ITask<TResult> CreateTask<TResult>(Func<Task<TResult>> func)
         {
-            Contract.Requires<ArgumentNullException>(func != null, "func");
-            Contract.Ensures(Contract.Result<ITask<TResult>>() != null);
-
             Task<TResult> task = func();
             if (task == null)
             {
