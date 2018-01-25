@@ -32,11 +32,8 @@
 
 namespace MorseCode.ITask
 {
-    using System.Diagnostics.Contracts;
-
     /// <summary>Provides an awaitable object that allows for configured awaits on <see cref="ITask"/>.</summary>
     /// <remarks>This type is intended for compiler use only.</remarks>
-    [ContractClass(typeof(ConfiguredTaskInterfaceContract))]
     public interface IConfiguredTask
     {
         /// <summary>Creates an awaiter used to await this <see cref="IConfiguredTask"/>.</summary>

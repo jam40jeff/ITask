@@ -32,12 +32,9 @@
 
 namespace MorseCode.ITask
 {
-    using System.Diagnostics.Contracts;
-
     /// <summary>
     /// An interface representing a Task which does not return a value.
     /// </summary>
-    [ContractClass(typeof(TaskInterfaceContract))]
     public interface ITask
     {
         /// <summary>Creates an awaiter used to await this <see cref="ITask"/>.</summary>

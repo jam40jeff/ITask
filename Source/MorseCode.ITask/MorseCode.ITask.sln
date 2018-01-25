@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Root", "_Root\_Root.csproj", "{2611A503-AE4B-4739-AD31-80685D786D26}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0024A69C-E51D-4B1B-9971-180715B52D3D}"
 	ProjectSection(SolutionItems) = preProject
-		CustomDictionary.xml = CustomDictionary.xml
 		MorseCode.snk = MorseCode.snk
-		Settings.StyleCop = Settings.StyleCop
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{88191769-417A-4306-B025-C01C2D431A11}"
@@ -34,5 +34,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50923C37-4989-4EDC-B347-64A93300E65D}
 	EndGlobalSection
 EndGlobal

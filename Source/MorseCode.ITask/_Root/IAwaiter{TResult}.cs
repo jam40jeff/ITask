@@ -32,7 +32,6 @@
 
 namespace MorseCode.ITask
 {
-    using System.Diagnostics.Contracts;
     using System.Runtime.CompilerServices;
 
     /// <summary>Awaiter interface for awaiting an <see cref="ITask{TResult}"/>.</summary>
@@ -40,7 +39,6 @@ namespace MorseCode.ITask
     /// The type of the result of the task.
     /// </typeparam>
     /// <remarks>This type is intended for compiler use only.</remarks>
-    [ContractClass(typeof(AwaiterInterfaceContract<>))]
     public interface IAwaiter<out TResult> : ICriticalNotifyCompletion
     {
         /// <summary>Gets a value indicating whether the task being awaited is completed.</summary>
