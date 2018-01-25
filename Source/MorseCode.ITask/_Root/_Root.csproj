@@ -52,15 +52,9 @@
     <Compile Include="AsyncMethodBuilderAttribute.cs" />
     <Compile Include="AwaiterInterfaceWrapper.cs" />
     <Compile Include="AwaiterInterfaceWrapper{TResult}.cs" />
-    <Compile Include="AwaiterInterfaceContract.cs" />
-    <Compile Include="AwaiterInterfaceContract{TResult}.cs" />
-    <Compile Include="ConfiguredTaskInterfaceContract.cs" />
-    <Compile Include="ConfiguredTaskInterfaceContract{TResult}.cs" />
     <Compile Include="Contract.cs" />
     <Compile Include="TaskInterfaceAsyncMethodBuilder.cs" />
     <Compile Include="TaskInterfaceAsyncMethodBuilder{TResult}.cs" />
-    <Compile Include="TaskInterfaceContract{TResult}.cs" />
-    <Compile Include="TaskInterfaceContract.cs" />
     <Compile Include="TaskInterfaceFactory.cs" />
     <Compile Include="TaskExtensionMethods.cs" />
     <Compile Include="TaskWrapper{TResult}.cs" />
@@ -78,11 +72,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskAwaiterWrapper.cs" />
     <Compile Include="TaskWrapper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <CodeAnalysisDictionary Include="..\CustomDictionary.xml">
-      <Link>CustomDictionary.xml</Link>
-    </CodeAnalysisDictionary>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\MorseCode.snk">
