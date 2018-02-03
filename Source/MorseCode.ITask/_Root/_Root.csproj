@@ -52,7 +52,6 @@
     <Compile Include="AsyncMethodBuilderAttribute.cs" />
     <Compile Include="AwaiterInterfaceWrapper.cs" />
     <Compile Include="AwaiterInterfaceWrapper{TResult}.cs" />
-    <Compile Include="Contract.cs" />
     <Compile Include="TaskInterfaceAsyncMethodBuilder.cs" />
     <Compile Include="TaskInterfaceAsyncMethodBuilder{TResult}.cs" />
     <Compile Include="TaskInterfaceFactory.cs" />
