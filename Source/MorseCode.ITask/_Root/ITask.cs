@@ -44,7 +44,7 @@ namespace MorseCode.ITask
         /// <summary>Creates an awaiter used to await this <see cref="ITask"/>.</summary>
         /// <returns>An awaiter instance.</returns>
         /// <remarks>This method is intended for compiler user rather than use directly in code.</remarks>
-        IAwaiter CreateAwaiter();
+        IAwaiter GetAwaiter();
 
         /// <summary>Configures an awaiter used to await this <see cref="ITask"/>.</summary>
         /// <param name="continueOnCapturedContext">

@@ -114,7 +114,7 @@ namespace MorseCode.ITask
         /// <remarks>This method is intended for compiler user rather than use directly in code.</remarks>
         public static AwaiterInterfaceWrapper GetAwaiter(this ITask awaitable)
         {
-            return new AwaiterInterfaceWrapper(awaitable.CreateAwaiter());
+            return new AwaiterInterfaceWrapper(awaitable.GetAwaiter());
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace MorseCode.ITask
         /// </returns>
         public static AwaiterInterfaceWrapper GetAwaiter(this IConfiguredTask awaitable)
         {
-            return new AwaiterInterfaceWrapper(awaitable.CreateAwaiter());
+            return new AwaiterInterfaceWrapper(awaitable.GetAwaiter());
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace MorseCode.ITask
         /// </returns>
         public static AwaiterInterfaceWrapper<TResult> GetAwaiter<TResult>(this ITask<TResult> awaitable)
         {
-            return new AwaiterInterfaceWrapper<TResult>(awaitable.CreateAwaiter());
+            return new AwaiterInterfaceWrapper<TResult>(awaitable.GetAwaiter());
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace MorseCode.ITask
         /// </returns>
         public static AwaiterInterfaceWrapper<TResult> GetAwaiter<TResult>(this IConfiguredTask<TResult> awaitable)
         {
-            return new AwaiterInterfaceWrapper<TResult>(awaitable.CreateAwaiter());
+            return new AwaiterInterfaceWrapper<TResult>(awaitable.GetAwaiter());
         }
     }
 }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AwaitTaskInterfaceDifferentNamespaceTests.cs" />
     <Compile Include="TaskExtensionMethodsTests.cs" />
     <Compile Include="TaskInterfaceAsyncMethodBuilderTests.cs" />
     <Compile Include="TaskInterfaceFactoryTests.cs" />
