@@ -58,14 +58,6 @@ For example, within a method marked with the `async` keyword and given a variabl
 int result = await t.ComputeValue();
 ```
 
-Note that the functionality required by the compiler to enable `await` keyword support is included in a class in the `MorseCode.ITask` namespace.  Therefore, a `using` statement will need to be added to the file for this code to compile as follows:
-
-```c#
-using MorseCode.ITask;
-```
-
-If you are using Resharper, it should suggest adding this `using` statement automatically.
-
 ### Returning an ITask
 
 Starting with C#-7, the compiler supports [generalized async return types](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7#generalized-async-return-types). All you need to do to return an `ITask` is ensure you’re using a modern compiler (≥VS-15 a.k.a. Visual Studio 2017 or a recent roslyn), a new enough `MorseCode.ITask` package (support was added in version 1.1.x), and simply mark your method as returning `ITask`:
