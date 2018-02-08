@@ -68,7 +68,7 @@ If you are using Resharper, it should suggest adding this `using` statement auto
 
 ### Returning an ITask
 
-Starting with C#-7, the compiler supports [generalized async return types](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7#generalized-async-return-types). All you need to do to return an `ITask` is ensure you’re using a modern compiler (≥VS-15 a.k.a. Visual Studio 2017 or a recent roslyn), a new enough `MorseCode.ITask` package (support was added in version 1.1.x), and simply mark your method as returning `ITask`:
+Starting with C#-7, the compiler supports [generalized async return types](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7#generalized-async-return-types). All you need to do to return an `ITask` is ensure you’re using a modern compiler (≥VS-15 a.k.a. Visual Studio 2017 or a recent roslyn), a new enough `MorseCode.ITask` package (support was added in version 1.0.74), and simply mark your method as returning `ITask`:
 
 ```c#
 public async ITask<int> ComputeValueAsync()
