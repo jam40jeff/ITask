@@ -51,12 +51,12 @@ namespace MorseCode.ITask
             }
         }
 
-        IAwaiter ITask.CreateAwaiter()
+        IAwaiter ITask.GetAwaiter()
         {
             return new TaskAwaiterWrapper(((Task)this.task).GetAwaiter());
         }
 
-        IAwaiter<TResult> ITask<TResult>.CreateAwaiter()
+        IAwaiter<TResult> ITask<TResult>.GetAwaiter()
         {
             return new TaskAwaiterWrapper<TResult>(this.task.GetAwaiter());
         }

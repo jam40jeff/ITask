@@ -45,7 +45,7 @@ namespace MorseCode.ITask.Tests
         [Test]
         public void ConfiguredTaskWrapperCreateAwaiter()
         {
-            IAwaiter awaiter = Task.Run(() => Thread.Sleep(50)).AsITask().ConfigureAwait(false).CreateAwaiter();
+            IAwaiter awaiter = Task.Run(() => Thread.Sleep(50)).AsITask().ConfigureAwait(false).GetAwaiter();
 
             Assert.IsNotNull(awaiter);
         }
@@ -58,7 +58,7 @@ namespace MorseCode.ITask.Tests
                 {
                     Thread.Sleep(50);
                     return Value;
-                }).AsITask().ConfigureAwait(false).CreateAwaiter();
+                }).AsITask().ConfigureAwait(false).GetAwaiter();
 
             Assert.IsNotNull(awaiter);
         }
@@ -84,7 +84,7 @@ namespace MorseCode.ITask.Tests
         [Test]
         public void TaskWrapperCreateAwaiter()
         {
-            IAwaiter awaiter = Task.Run(() => Thread.Sleep(50)).AsITask().CreateAwaiter();
+            IAwaiter awaiter = Task.Run(() => Thread.Sleep(50)).AsITask().GetAwaiter();
 
             Assert.IsNotNull(awaiter);
         }
@@ -149,7 +149,7 @@ namespace MorseCode.ITask.Tests
                 {
                     Thread.Sleep(50);
                     return Value;
-                }).AsITask().CreateAwaiter();
+                }).AsITask().GetAwaiter();
 
             Assert.IsNotNull(awaiter);
         }

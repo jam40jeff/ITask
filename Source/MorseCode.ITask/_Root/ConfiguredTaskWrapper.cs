@@ -44,7 +44,7 @@ namespace MorseCode.ITask
             this.task = task.ConfigureAwait(continueOnCapturedContext);
         }
 
-        IAwaiter IConfiguredTask.CreateAwaiter()
+        IAwaiter IConfiguredTask.GetAwaiter()
         {
             return new ConfiguredTaskAwaiterWrapper(this.task.GetAwaiter());
         }

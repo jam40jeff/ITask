@@ -44,7 +44,7 @@ namespace MorseCode.ITask
             this.task = task;
         }
 
-        IAwaiter ITask.CreateAwaiter()
+        IAwaiter ITask.GetAwaiter()
         {
             return new TaskAwaiterWrapper(this.task.GetAwaiter());
         }
