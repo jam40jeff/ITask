@@ -6,6 +6,11 @@
     <RootNamespace>MorseCode.ITask.Tests</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="coveralls.io" Version="1.4.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
