@@ -1,21 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Root", "_Root\_Root.csproj", "{2611A503-AE4B-4739-AD31-80685D786D26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Root", "_Root\_Root.csproj", "{AA6961E2-E995-4774-BAAF-4576B5F13D20}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0024A69C-E51D-4B1B-9971-180715B52D3D}"
-	ProjectSection(SolutionItems) = preProject
-		MorseCode.snk = MorseCode.snk
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{88191769-417A-4306-B025-C01C2D431A11}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DA6DEDCD-84E0-4E44-AEED-9DC7164B65A8}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{4D9F8BED-6088-4D9E-86E7-C7B0DF5973F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,19 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2611A503-AE4B-4739-AD31-80685D786D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2611A503-AE4B-4739-AD31-80685D786D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2611A503-AE4B-4739-AD31-80685D786D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2611A503-AE4B-4739-AD31-80685D786D26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88191769-417A-4306-B025-C01C2D431A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88191769-417A-4306-B025-C01C2D431A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88191769-417A-4306-B025-C01C2D431A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88191769-417A-4306-B025-C01C2D431A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6961E2-E995-4774-BAAF-4576B5F13D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6961E2-E995-4774-BAAF-4576B5F13D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6961E2-E995-4774-BAAF-4576B5F13D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6961E2-E995-4774-BAAF-4576B5F13D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D9F8BED-6088-4D9E-86E7-C7B0DF5973F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D9F8BED-6088-4D9E-86E7-C7B0DF5973F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D9F8BED-6088-4D9E-86E7-C7B0DF5973F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D9F8BED-6088-4D9E-86E7-C7B0DF5973F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {50923C37-4989-4EDC-B347-64A93300E65D}
+		SolutionGuid = {4D91E50D-9C29-42F1-95D2-76DD6F7CA1EA}
 	EndGlobalSection
 EndGlobal

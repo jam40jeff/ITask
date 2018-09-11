@@ -1,89 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2611A503-AE4B-4739-AD31-80685D786D26}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MorseCode.ITask</RootNamespace>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <Version>2.0.0</Version>
+    <Authors>MorseCode Software</Authors>
+    <Description>An awaitable covariant ITask interface which may be used in place of the built-in Task class.</Description>
+    <PackageId>MorseCode.ITask</PackageId>
+    <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/jam40jeff/ITask</PackageProjectUrl>
+    <Product>MorseCode ITask</Product>
+    <Copyright>Copyright © MorseCode Software 2015</Copyright>
     <AssemblyName>MorseCode.ITask</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <RootNamespace>MorseCode.ITask</RootNamespace>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <DocumentationFile>bin\Debug\MorseCode.ITask.XML</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.0\MorseCode.ITask.xml</DocumentationFile>
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <DocumentationFile>bin\Release\MorseCode.ITask.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.0\MorseCode.ITask.xml</DocumentationFile>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\MorseCode.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AsyncMethodBuilderAttribute.cs" />
-    <Compile Include="AwaiterInterfaceWrapper.cs" />
-    <Compile Include="AwaiterInterfaceWrapper{TResult}.cs" />
-    <Compile Include="TaskInterfaceAsyncMethodBuilder.cs" />
-    <Compile Include="TaskInterfaceAsyncMethodBuilder{TResult}.cs" />
-    <Compile Include="TaskInterfaceFactory.cs" />
-    <Compile Include="TaskExtensionMethods.cs" />
-    <Compile Include="TaskWrapper{TResult}.cs" />
-    <Compile Include="ConfiguredTaskWrapper.cs" />
-    <Compile Include="ConfiguredTaskWrapper{TResult}.cs" />
-    <Compile Include="TaskAwaiterWrapper{TResult}.cs" />
-    <Compile Include="ConfiguredTaskAwaiterWrapper.cs" />
-    <Compile Include="ConfiguredTaskAwaiterWrapper{TResult}.cs" />
-    <Compile Include="IAwaiter{TResult}.cs" />
-    <Compile Include="IAwaiter.cs" />
-    <Compile Include="IConfiguredTask{TResult}.cs" />
-    <Compile Include="IConfiguredTask.cs" />
-    <Compile Include="ITask{TResult}.cs" />
-    <Compile Include="ITask.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskAwaiterWrapper.cs" />
-    <Compile Include="TaskWrapper.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\MorseCode.snk">
-      <Link>MorseCode.snk</Link>
-    </None>
-    <None Include="_Root.nuspec" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
+
 </Project>
