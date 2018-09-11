@@ -10,6 +10,8 @@
     <PackageProjectUrl>https://github.com/jam40jeff/ITask</PackageProjectUrl>
     <Product>MorseCode ITask</Product>
     <Copyright>Copyright © MorseCode Software 2015</Copyright>
+    <AssemblyName>MorseCode.ITask</AssemblyName>
+    <RootNamespace>MorseCode.ITask</RootNamespace>
   </PropertyGroup>
 
 

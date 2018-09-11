@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>Tests</RootNamespace>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>MorseCode.ITask.Tests</AssemblyName>
+    <RootNamespace>MorseCode.ITask.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
