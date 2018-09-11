@@ -14,5 +14,9 @@
     <RootNamespace>MorseCode.ITask</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\MorseCode.ITask.xml</DocumentationFile>
+  </PropertyGroup>
+
 
 </Project>
