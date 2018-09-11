@@ -18,5 +18,9 @@
     <DocumentationFile>bin\Debug\netstandard1.0\MorseCode.ITask.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.0\MorseCode.ITask.xml</DocumentationFile>
+  </PropertyGroup>
+
 
 </Project>
