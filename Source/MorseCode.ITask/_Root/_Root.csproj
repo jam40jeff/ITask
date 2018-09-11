@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\MorseCode.ITask.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard1.0\MorseCode.ITask.xml</DocumentationFile>
   </PropertyGroup>
 
 
