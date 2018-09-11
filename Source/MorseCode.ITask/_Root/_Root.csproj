@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>2.0.0</Version>
+    <Authors>MorseCode Software</Authors>
+    <Description>An awaitable covariant ITask interface which may be used in place of the built-in Task class.</Description>
+    <PackageId>MorseCode.ITask</PackageId>
+    <PackageLicenseUrl>http://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/jam40jeff/ITask</PackageProjectUrl>
+    <Product>MorseCode ITask</Product>
+    <Copyright>Copyright © MorseCode Software 2015</Copyright>
   </PropertyGroup>
 
 
