@@ -12,6 +12,8 @@
     <Copyright>Copyright © MorseCode Software 2015</Copyright>
     <AssemblyName>MorseCode.ITask</AssemblyName>
     <RootNamespace>MorseCode.ITask</RootNamespace>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\MorseCode.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
