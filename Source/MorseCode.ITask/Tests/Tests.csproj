@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFrameworks>netcoreapp1.0;netcoreapp2.0;net45</TargetFrameworks>
     <AssemblyName>MorseCode.ITask.Tests</AssemblyName>
     <RootNamespace>MorseCode.ITask.Tests</RootNamespace>
   </PropertyGroup>

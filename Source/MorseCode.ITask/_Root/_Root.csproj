@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFrameworks>netstandard1.0;netstandard2.0;net45</TargetFrameworks>
     <Version>2.0.0</Version>
     <Authors>MorseCode Software</Authors>
     <Description>An awaitable covariant ITask interface which may be used in place of the built-in Task class.</Description>
@@ -12,6 +12,8 @@
     <Copyright>Copyright © MorseCode Software 2015</Copyright>
     <AssemblyName>MorseCode.ITask</AssemblyName>
     <RootNamespace>MorseCode.ITask</RootNamespace>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\MorseCode.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
